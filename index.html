@@ -98,7 +98,7 @@ h2{font-size:17px} h3{font-size:15px}
 
 /* Money */
 .m{display:inline-flex;align-items:baseline;gap:4px;white-space:nowrap}
-.m .sym{font-size:.78em;color:var(--muted);font-weight:400}
+.m .sym{font-size:.8em;color:var(--muted);font-weight:400;unicode-bidi:isolate}
 .in-c{color:var(--in)} .out-c{color:var(--out)}
 
 /* Month summary */
@@ -205,7 +205,7 @@ select.inp{appearance:none;-webkit-appearance:none;background-image:linear-gradi
 .amount input{flex:1;min-width:0;border:0;background:transparent;font-family:var(--f-display);font-weight:600;font-size:36px;text-align:center;padding:4px 0;direction:ltr;outline:none}
 .amount input::placeholder{color:var(--line)}
 .curpick{display:flex;flex-direction:column;gap:4px}
-.curpick button{border:1px solid var(--line);background:var(--surface);border-radius:9px;padding:4px 10px;font-size:14px;min-width:52px}
+.curpick button{border:1px solid var(--line);background:var(--surface);border-radius:9px;padding:6px 12px;font-size:14px;min-width:68px;min-height:38px}
 .curpick button[aria-pressed="true"]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
 .err{margin:0;color:var(--out);font-size:13.5px}
 .actions{display:flex;gap:10px}
@@ -285,8 +285,8 @@ select.inp{appearance:none;-webkit-appearance:none;background-image:linear-gradi
       <div class="amount">
         <input id="fAmount" inputmode="decimal" placeholder="0.00" autocomplete="off" aria-label="المبلغ">
         <div class="curpick" id="sCur">
-          <button type="button" data-cur="AED" aria-pressed="true">د.إ</button>
-          <button type="button" data-cur="JOD" aria-pressed="false">د.أ</button>
+          <button type="button" data-cur="AED" aria-pressed="true">درهم</button>
+          <button type="button" data-cur="JOD" aria-pressed="false">دينار</button>
         </div>
       </div>
       <div class="field">
@@ -317,7 +317,7 @@ document.documentElement.dir = "rtl";
 const LS = "mizan.v1", LSP = "mizan.prefs";
 const MONTHS = ["يناير","فبراير","مارس","أبريل","مايو","يونيو","يوليو","أغسطس","سبتمبر","أكتوبر","نوفمبر","ديسمبر"];
 const DAYS = ["الأحد","الإثنين","الثلاثاء","الأربعاء","الخميس","الجمعة","السبت"];
-const CUR = { AED:{sym:"د.إ", name:"درهم"}, JOD:{sym:"د.أ", name:"دينار"} };
+const CUR = { AED:{sym:"درهم", name:"درهم"}, JOD:{sym:"دينار", name:"دينار"} };
 const PALETTE = ["#5B6CF0","#E0912F","#2A9E83","#D4566A","#8B5CF6","#3897D6","#B9792C","#5E9A34","#B24F98","#7C8498","#C2602F","#3F7FB0"];
 const DEF_CATS = {
   in: ["راتب","قرض","بيع أجهزة","عمل حر","هدايا","دخل آخر"],
